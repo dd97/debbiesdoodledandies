@@ -355,7 +355,7 @@
 
   <footer>
     <h3>Contact Us</h3>
-    <form action="https://formsubmit.co/debbieldoss@gmail.com" method="POST" />
+    <form id="footerForm" action="https://formsubmit.co/debbieldoss@gmail.com" method="POST" />
       <label>
         Name:<br>
         <input type="text" name="name" required>
@@ -365,6 +365,7 @@
         <input type="text" name="contact" required>
       </label><br><br>
       <button type="submit">Send Inquiry</button>
+      <div id="footerSuccess" style="display:none; margin-top:5px;">Form submitted successfully!</div>
     </form>  
     
   </footer>
@@ -421,6 +422,36 @@
         lightbox.style.display = "none";
       }
     });
+
+    const footerForm = document.getElementById('footerForm');
+    const footerSuccess = document.getElementById('footerSuccess');
+
+    footerForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(footerForm);
+    const action = footerForm.action;
+
+    try {
+        const response = await fetch(action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+        footerSuccess.style.display = 'block';
+        footerForm.reset();
+        setTimeout(() => footerSuccess.style.display = 'none', 5000); // fade out after 5s
+        } else {
+        alert('Submission failed. Try again!');
+        }
+    } catch (error) {
+        console.error(error);
+        alert('An error occurred. Try again!');
+    }
+    });
+
   </script>
 </body>
 </html>
