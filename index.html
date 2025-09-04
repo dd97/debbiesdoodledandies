@@ -20,19 +20,9 @@
       margin: 0;
       color: #fffaf3;
     }
-    .parents {
-      text-align: center;
-      padding: 20px;
-      background: #f9f4ec;
-    }
-    .parents img {
-      max-width: 90%;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
     .container {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 20px;
       padding: 20px;
     }
@@ -44,20 +34,34 @@
       text-align: center;
       border: 2px solid #e6d8c3;
     }
-    .card h3 {
+    .card h2, .card h3 {
       margin: 10px 0;
       color: #4b3b2b;
     }
     .card p {
-      margin: 0 0 12px;
+      margin: 10px 0;
       font-size: 14px;
       color: #5c4735;
+      line-height: 1.4em;
+    }
+    .thumbnail {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 2px solid #e6d8c3;
+      transition: transform 0.2s;
+    }
+    .thumbnail:hover {
+      transform: scale(1.05);
     }
     .thumbnails {
       display: flex;
       justify-content: center;
       gap: 8px;
       flex-wrap: wrap;
+      margin-top: 10px;
     }
     .thumbnails img {
       width: 70px;
@@ -109,6 +113,18 @@
     }
     .lightbox .prev { left: 30px; }
     .lightbox .next { right: 30px; }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #f3e5d0;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    footer a {
+      color: #8b5e3c;
+      text-decoration: none;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -116,28 +132,49 @@
     <h1>🐾 Puppies for Sale 🐾</h1>
   </header>
 
-  <section class="parents">
-    <h2>Proud Parents</h2>
-    <img src="images/parents.jpg" alt="Puppy Parents">
-  </section>
-
   <div class="container">
+    <!-- Parents card -->
+    <div class="card">
+      <h2>Proud Parents</h2>
+      <img src="images/parents.jpg" data-group="parents" alt="Puppy Parents" class="thumbnail">
+      <p>
+        Tawny, a CKC registered goldendoodle, is a whirlwind of golden curls and happy-go-lucky energy, a reflection of her golden retriever lineage. 
+        A free spirit who loves a good belly rub and has an unending supply of boundless enthusiasm, energy and unparalleled intelligence. 
+        These qualities prompted her mom (me) to find her a mate with similar qualities to carry on the lineage.  <br><br>
+        Enter Gunner, an AKC registered cream colored standard poodle who carries himself with a quiet dignity that is all his own. 
+        He runs with horses and romps with deer.  Tawny was mesmerized by his graceful prance and a courtship began.  
+        This courting culminated in the birth of one female named Honey and six males named ‘Bleu’ Suede Shoes, Memphis, Teddy Bear, Harley, Elvis, and Tupelo.  
+        Tawny and Gunner selected these names to honor their hometown hero.   These puppies are registerable Standard F1B Goldendoodle’s.  
+      </p>
+    </div>
+
     <!-- Puppy 1 -->
     <div class="card">
-      <h3>Bella</h3>
-      <p>Golden Retriever • 8 weeks old</p>
-      <p><strong>$850</strong></p>
+      <h3>Tupelo</h3>
+      <p>Meet Tupelo</p>
+      <p><strong></strong></p>
       <div class="thumbnails">
-        <img src="images/puppy1-1.png" data-group="puppy1" alt="Bella 1">
-        <img src="images/puppy1-2.png" data-group="puppy1" alt="Bella 2">
-        <img src="images/puppy1-3.png" data-group="puppy1" alt="Bella 3">
+        <img src="images/tupelo/puppy1-8472.jpg" data-group="puppy1" alt="Tupelo 1">
+        <img src="images/tupelo/puppy1-8473.JPG" data-group="puppy1" alt="Tupelo 2">
+        <img src="images/tupelo/puppy1-8474.JPG" data-group="puppy1" alt="Tupelo 3">
+        <img src="images/tupelo/puppy1-8475.jpg" data-group="puppy1" alt="Tupelo 4">
+        <img src="images/tupelo/puppy1-8476.JPG" data-group="puppy1" alt="Tupelo 5">
+        <img src="images/tupelo/puppy1-8477.JPG" data-group="puppy1" alt="Tupelo 6">
+        <img src="images/tupelo/puppy1-8478.jpg" data-group="puppy1" alt="Tupelo 7">
+        <img src="images/tupelo/puppy1-8479.JPG" data-group="puppy1" alt="Tupelo 8">
+        <img src="images/tupelo/puppy1-8480.JPG" data-group="puppy1" alt="Tupelo 9">
+        <img src="images/tupelo/puppy1-8481.jpg" data-group="puppy1" alt="Tupelo 10">
+        <img src="images/tupelo/puppy1-8482.JPG" data-group="puppy1" alt="Tupelo 11">
+        <img src="images/tupelo/puppy1-8483.JPG" data-group="puppy1" alt="Tupelo 12">
+        <img src="images/tupelo/puppy1-8484.JPG" data-group="puppy1" alt="Tupelo 13">
+        <img src="images/tupelo/puppy1-8485.JPG" data-group="puppy1" alt="Tupelo 14">
       </div>
     </div>
 
     <!-- Puppy 2 -->
     <div class="card">
-      <h3>Max</h3>
-      <p>Labrador • 10 weeks old</p>
+      <h3>Elvis</h3>
+      <p>Meet Elvis</p>
       <p><strong>$750</strong></p>
       <div class="thumbnails">
         <img src="images/puppy2-1.png" data-group="puppy2" alt="Max 1">
@@ -172,7 +209,7 @@
   </div>
 
   <script>
-    const thumbnails = document.querySelectorAll(".thumbnails img");
+    const thumbnails = document.querySelectorAll(".thumbnail, .thumbnails img");
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
     const closeBtn = document.getElementById("close");
@@ -185,7 +222,7 @@
     thumbnails.forEach(img => {
       img.addEventListener("click", () => {
         const groupName = img.dataset.group;
-        currentGroup = [...document.querySelectorAll(`img[data-group='${groupName}']`)];
+        currentGroup = [...document.querySelectorAll(`[data-group='${groupName}']`)];
         currentIndex = currentGroup.indexOf(img);
         showImage();
         lightbox.style.display = "flex";
