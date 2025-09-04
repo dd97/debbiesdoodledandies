@@ -125,6 +125,29 @@
       text-decoration: none;
       font-weight: bold;
     }
+    footer form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+    }
+    footer input, footer button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 2px solid #e6d8c3;
+    border-radius: 8px;
+    font-size: 14px;
+    }
+    footer button {
+    background: #d2b48c;
+    color: #fffaf3;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    }
+    footer button:hover {
+    background: #c19a6b;
+    }
   </style>
   <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
@@ -331,7 +354,19 @@
   </div>
 
   <footer>
-    <p>Contact us: <a href="mailto:yourname@email.com">yourname@email.com</a></p>
+    <h3>Contact Us</h3>
+    <form action="https://formsubmit.co/debbieldoss@gmail.com" method="POST" />
+      <label>
+        Name:<br>
+        <input type="text" name="name" required>
+      </label><br><br>
+      <label>
+        Email or Phone:<br>
+        <input type="text" name="contact" required>
+      </label><br><br>
+      <button type="submit">Send Inquiry</button>
+    </form>  
+    
   </footer>
 
   <!-- Lightbox -->
