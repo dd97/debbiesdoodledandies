@@ -259,7 +259,7 @@
     <div class="card">
         <h3>Honey</h3>
         <p>Meet Honey, Female, Born on 07/08/2025 - 8 weeks old</p>
-        <p><strong>$1,500</strong></p>
+        <p><strong><del>$1,500</del> SOLD!</strong></p>
         <div class="thumbnails">
           <img src="images/honey/puppy4-8421.JPG" data-group="puppy4" alt="Honey 1">
           <img src="images/honey/puppy4-8422.JPG" data-group="puppy4" alt="Honey 2">
@@ -365,7 +365,7 @@
         <input type="text" name="contact" required>
       </label><br><br>
       <button type="submit">Send Inquiry</button>
-      <div id="footerSuccess" style="display:none; margin-top:5px;">Form submitted successfully!</div>
+      
     </form>  
     
   </footer>
@@ -423,34 +423,7 @@
       }
     });
 
-    const footerForm = document.getElementById('footerForm');
-    const footerSuccess = document.getElementById('footerSuccess');
-
-    footerForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(footerForm);
-    const action = footerForm.action;
-
-    try {
-        const response = await fetch(action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-        footerSuccess.style.display = 'block';
-        footerForm.reset();
-        setTimeout(() => footerSuccess.style.display = 'none', 5000); // fade out after 5s
-        } else {
-        alert('Submission failed. Try again!');
-        }
-    } catch (error) {
-        console.error(error);
-        alert('An error occurred. Try again!');
-    }
-    });
+    
 
   </script>
 </body>
