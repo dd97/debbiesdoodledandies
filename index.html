@@ -355,9 +355,9 @@
 
   <footer>
     <h3>Contact Us</h3>
-    <form id="footerForm" action="https://formsubmit.co/debbieldoss@gmail.com" method="POST" />
+    <form id="footerForm" action="https://formsubmit.co/debbiesdoodledandies@gmail.com" method="POST" />
         <input type="hidden" name="_subject" value="New puppy inquiry!">
-        <input type="hidden" name="_next" value="https://dd97.github.io/debbiesdoodledandies/">
+        <input type="hidden" name="_next" value="https://dd97.github.io/debbiesdoodledandies/?contact=1">
       <label>
         Name:<br>
         <input type="text" name="name" required>
@@ -366,10 +366,15 @@
         Email or Phone:<br>
         <input type="text" name="contact" required>
       </label><br><br>
-      <button type="submit">Send Inquiry</button>
-      
-    </form>  
+      <label>
+        Comments:<br>
+        <textarea name="comments" placeholder="Your comments..." rows="4" style="margin-bottom:5px; padding:5px;"></textarea>
+      </label><br><br>            
     
+      <button type="submit">Send Inquiry</button>
+      <div id="footerSuccess" style="display:none; color:green; margin-top:5px;">Form submitted successfully!</div>
+    </form>  
+    <br><br>
   </footer>
 
   <!-- Lightbox -->
@@ -425,7 +430,11 @@
       }
     });
 
-    
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("contact") === "1") {
+        document.getElementById("footerSuccess").style.display = "block";
+        setTimeout(() => footerSuccess.style.display = 'none', 5000); // fade out after 5s
+    }
 
   </script>
 </body>
